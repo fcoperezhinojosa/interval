@@ -1,7 +1,5 @@
 package mma.legacy.interval;
 
-import java.util.logging.Logger;
-
 /**
  * Clase para el ejemplo de trabajo con Legacy
  * @author Agustin
@@ -149,9 +147,9 @@ public class Interval {
 	}
 
 	/**
-	 * Este método calcula el ancho de un intervalo
-	 * @param interval
-	 * @return
+	 * Este método calcula la interseccion entre dos intervalos
+	 * @param intervalo
+	 * @return si hay una intersección entre los intervalos
 	 */
 
 	public boolean intersectsWith(Interval interval) 
@@ -188,18 +186,26 @@ public class Interval {
 			}
 		}
 		return this.includes(interval.minimum)|| this.includes(interval.maximum);
+	
 	}
 
-																																													@Override
+	@Override
 	public String toString() {
 		// TODO
 		return null;
 	}
-
-																																																																																	@Override
+																																													
+	@Override
 	public boolean equals(Object object) {
 		// TODO
 		return false;
 	}
+	
+	public boolean hashCode(Object object) {
+		// TODO
+		return false;
+	}
+																																																																																	
+																																																																																	
 
 }
