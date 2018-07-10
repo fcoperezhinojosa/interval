@@ -2,7 +2,7 @@ package mma.legacy.interval;
 
 /**
  * Clase para el ejemplo de trabajo con Legacy
- * @author Agustin
+ * @author kiko
  * Controla operaciones sobre intervalos que pudeen ser abiertos o cerrados
  */
 public class Interval {
@@ -46,17 +46,21 @@ public class Interval {
 		
 		switch (opening) 
 		{
-			case BOTH_OPENED:			return minimum < value && value < maximum;
+			case BOTH_OPENED:			
+							return minimum < value && value < maximum;
 			
-			case LEFT_OPENED: 			return minimum < value && value <= maximum;
+			case LEFT_OPENED: 			
+							return minimum < value && value <= maximum;
 			
-			case RIGHT_OPENED:			return minimum <= value && value < maximum;
+			case RIGHT_OPENED:			
+							return minimum <= value && value < maximum;
 			
-			case UNOPENED:				return minimum <= value && value <= maximum;
+			case UNOPENED:			
+							return minimum <= value && value <= maximum;
 			
-			default:					assert false;
-			
-			return false;
+			default:					
+					assert false;			
+					return false;
 		}
 	}
 
@@ -191,20 +195,27 @@ public class Interval {
 
 	@Override
 	public String toString() {
-		// TODO
-		return null;
-	}
-																																													
-	@Override
-	public boolean equals(Object object) {
-		// TODO
-		return false;
+		return "";
 	}
 	
-	public boolean hashCode(Object object) {
-		// TODO
-		return false;
+	@Override
+	public int hashCode() {
+		return -1;
 	}
+				
+	
+	@Override
+	public boolean equals(Object obj) {
+	    //null instanceof Object will always return false
+	    if (!(obj instanceof Interval))
+	      return false;
+	    if (obj == this)
+	      return true;	
+	    
+	    return false;
+	}
+	
+	
 																																																																																	
 																																																																																	
 
